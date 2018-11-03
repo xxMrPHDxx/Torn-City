@@ -1,9 +1,10 @@
 <?php
 	if(isset($_GET['cat']) && isset($_GET['value'])){
-		$category = $_GET['cat'];
-		$value = $_GET['value'];
-
 		$mysql = mysqli_connect("localhost","root","minecraft12345","mysql");
+		
+		$category = $mysql->real_escape_string($_GET['cat']);
+		$value = $mysql->real_escape_string($_GET['value']);
+
 		$sql = "SELECT name FROM TORN_USERS WHERE ".$category." LIKE \"%".$value."%\";";
 		$result = $mysql->query($sql);
 

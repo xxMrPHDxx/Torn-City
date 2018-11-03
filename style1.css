@@ -45,7 +45,7 @@ body {
 }
 
 #main {
-	margin-top: 8px;
+	margin-top: 8px; /* Done upload to github.. You guys can find the code there! Thanks again */
 	grid-area: main;
 }
 
@@ -220,20 +220,18 @@ div#main > hr {
 	margin: 10px 0;
 }
 
-/* Home */
-div#main > .main.header {
-	font-weight: 700;
-	margin-top: 5px;
-	font-size: 14px;
-	padding: 6px;
-}
-
-.subtitle.light {
+.subtitle {
 	display: flex;
 	align-items: center;
-	background-color: #6d6d6d;
 	font-size: 13px;
 	color: white;
+}
+
+.subtitle.dark {
+	background-color: rgb(36, 36, 36);
+}
+.subtitle.light {
+	background-color: #6d6d6d;
 }
 
 .icon.bulb {
@@ -243,6 +241,14 @@ div#main > .main.header {
 	background-position-x: left;
 	background-position-y: top;
 	background-repeat: no-repeat;
+}
+
+/* Home */
+div#main > .main.header {
+	font-weight: 700;
+	margin-top: 5px;
+	font-size: 14px;
+	padding: 6px;
 }
 
 .content-box > * {
@@ -268,3 +274,50 @@ table#Items, table#Items > tbody > tr, table#Items > tbody > tr > td{
 table#Items > tbody > tr > td {
 	padding: 20px;
 }
+
+div#main > * {
+	margin: 8px 0;
+}
+
+#Inventory.items.type {
+	display: grid;
+	grid-auto-flow: column;
+	background-color: #403f3f;
+}
+
+#Inventory.items.type > *:nth-child(8n) { /* Fix later */
+	grid-column-end: 8;
+}
+
+.item-type {
+	width: 27px;
+	height: 33px;
+	background-image: url(icons/items_dark.png);
+}
+
+.item-type.off { background-position-x: -34px; }
+.item-type.melee { background-position-y: -34px; }
+.item-type.primary { background-position-y: calc(-34px * 2); }
+.item-type.secondary { background-position-y: calc(-34px * 3); }
+.item-type.armor { background-position-y: calc(-34px * 4); }
+.item-type.medical { background-position-y: calc(-34px * 5); }
+.item-type.temporary { background-position-y: calc(-34px * 6); }
+.item-type.energy-drink { background-position-y: calc(-34px * 7); }
+.item-type.candy { background-position-y: calc(-34px * 8); }
+.item-type.drugs { background-position-y: calc(-34px * 9); }
+.item-type.enhancer { background-position-y: calc(-34px * 10); }
+.item-type.alcohol { background-position-y: calc(-34px * 11); }
+.item-type.boosters { background-position-y: calc(-34px * 12); }
+.item-type.electrical { background-position-y: calc(-34px * 13); }
+.item-type.jewelry { background-position-y: calc(-34px * 14); }
+.item-type.viruses { background-position-y: calc(-34px * 15); }
+.item-type.flowers { background-position-y: calc(-34px * 16); }
+.item-type.supply-packs { background-position-y: calc(-34px * 17); }
+.item-type.collectibles { background-position-y: calc(-34px * 18); }
+.item-type.clothing { background-position-y: calc(-34px * 19); }
+.item-type.cars { background-position-y: calc(-34px * 20); }
+.item-type.artifacts { background-position-y: calc(-34px * 21); }
+.item-type.plushies { background-position-y: calc(-34px * 22); }
+.item-type.special { background-position-y: calc(-34px * 23); }
+.item-type.misc { background-position-y: calc(-34px * 24); }
+.item-type.books { background-position-y: calc(-34px * 25); }

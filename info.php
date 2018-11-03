@@ -1,10 +1,10 @@
 <?php 
 	header("Content-Type: application/json");
-	if(isset($_POST['userid'])){ // Change to POST later
+	if(isset($_POST['userid'])){
 		$mysql = mysqli_connect("localhost","root","minecraft12345","mysql");
 
 		$userid = $mysql->real_escape_string($_POST['userid']);
-		$result = $mysql->query("SELECT * FROM TORN_USERS WHERE userid='".$userid."';");
+		$result = $mysql->query("SELECT energy,maxenergy,nerve,maxnerve,happy,maxhappy,life,maxlife FROM TORN_USERS WHERE userid='".$userid."';");
 
 		$row = $result->fetch_assoc();
 		$len = sizeof($row);

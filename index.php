@@ -119,6 +119,7 @@
 				<?php 
 					if($page == 'home') include "areas/home.php";
 					elseif ($page == 'items') include "areas/items.php";
+					elseif ($page == 'gym') include "areas/gym.php";
 					else echo "Unknown page ".$page;
 				?>
 			</div>
