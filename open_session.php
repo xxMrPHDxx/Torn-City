@@ -2,8 +2,9 @@
 	$mysql = mysqli_connect("localhost","root","minecraft12345","mysql");
 
 	session_start();
-	$result = $mysql->query("SELECT name,money,level,points,merits,energy,maxenergy,nerve,maxnerve,happy,maxhappy,life,maxlife FROM TORN_USERS;");
+	$result = $mysql->query("SELECT userid,name,money,level,points,merits,energy,maxenergy,nerve,maxnerve,happy,maxhappy,life,maxlife FROM TORN_USERS;");
 	$row = $result->fetch_assoc();
+	$SESSION['userid'] = $row['userid'];
 	$SESSION['name'] = $row['name'];
 	$SESSION['money'] = $row['money'];
 	$SESSION['level'] = $row['level'];

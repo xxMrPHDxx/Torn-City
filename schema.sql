@@ -54,3 +54,42 @@ INSERT INTO ITEMS (name,type,price) VALUES (
 	"Melee",
 	10000
 );
+
+-- CREATING GYMS TABLE
+CREATE TABLE GYMS (
+	id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	name VARCHAR(100) NOT NULL;
+	strength_gain DECIMAL(9,2) default 0,
+	defense_gain DECIMAL(9,2) default 0,
+	speed_gain DECIMAL(9,2) default 0,
+	dexterity_gain DECIMAL(9,2) default 0,
+	cost INT default 0,
+	energy_usage INT default 5
+);
+
+-- INSERTING 3 GYMS INTO GYMS TABLE
+INSERT INTO GYMS (name,strength_gain,defense_gain,speed_gain,dexterity_gain,cost,energy_usage) VALUES (
+	"Premiere Club",
+	1.88,
+	1.78,
+	1.66,
+	1.36,
+	100,
+	5
+),(
+	"Average Joe's Club",
+	1.98,
+	2.30,
+	1.76,
+	1.62,
+	150,
+	5
+),(
+	"Woody's Workout",
+	1.58,
+	1.84,
+	2.40,
+	1.32,
+	200,
+	5
+);

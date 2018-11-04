@@ -4,8 +4,18 @@
 		$page = $_POST['page'];
 		$title = $_POST['title'];
 	}else{
-		$page = 'home';
-		$title = "Torn | Home";
+		if(isset($_POST['submit']) && isset($_POST['type']) && isset($_POST['value'])){
+			$submit = $_POST['submit'];
+			if($submit == "TRAIN"){ // TODO: Train stats based on type
+				$type = $_POST['type'];
+				$value = $_POST['value'];
+				$page = "gym";
+				$title = "Torn | Gym";
+			}
+		}else{
+			$page = 'home';
+			$title = "Torn | Home";
+		}
 	}
 ?>
 <!DOCTYPE html>
