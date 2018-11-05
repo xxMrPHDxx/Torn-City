@@ -118,7 +118,7 @@
 								echo "<li onclick=select(\"".$cpage."\") ".($page==$cpage ? "class=\"selected\"":"")."><form id=\"Navigate_".$cpage."\" action=\"index.php\" method=\"POST\">".
 									"<input type=\"hidden\" name=\"page\" value=\"".$cpage."\">".
 									"<input type=\"hidden\" name=\"title\" value=\"Torn | ".$title."\">".
-									"<div style=\"display: flex;\"><i class=\"icon ".$cpage."\"></i>".$title."</div></form></li>";
+									"<div style=\"display: flex;\"><i class=\"areas icon ".$cpage."\"></i>".$title."</div></form></li>";
 							}
 						?>
 					</ul>
@@ -130,6 +130,7 @@
 					if($page == 'home') include "areas/home.php";
 					elseif ($page == 'items') include "areas/items.php";
 					elseif ($page == 'gym') include "areas/gym.php";
+					elseif ($page == 'crimes') include "areas/crimes.php";
 					else echo "Unknown page ".$page;
 				?>
 			</div>

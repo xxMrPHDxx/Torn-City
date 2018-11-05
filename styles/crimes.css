@@ -1,0 +1,66 @@
+.info-box {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	border-radius: 6px;
+	background: url(../icons/stripe.png), linear-gradient(#c9c9c9,#9a9a9a);
+}
+
+.info-box > .content {
+	background-image: linear-gradient(#fefefe,#e6e6e6);
+	padding: 10px;
+}
+
+i.icon.info {
+	margin: 9px 11px 0 10px;
+	background-image: url(../icons/info.png);
+	width: 10px;
+	height: 18px;
+}
+
+.crimes.table-list {
+	display: grid;
+	grid-auto-flow: row;
+	grid-gap: 2px;
+}
+
+.table-list > .row {
+	display: grid;
+	grid-template-columns: 42px auto 75px 38px;
+	grid-gap: 4px;
+}
+
+.table-list > .row > * {
+	display: flex;
+	align-items: center;
+	padding: 4px;
+}
+
+.footer, .table-list > .row > * {
+	background-color: #f2f2f2;
+}
+
+.table-list > .row > *:nth-child(3) {
+	display: inherit;
+	text-align: center;
+}
+
+.center {
+	display: inline-flex;
+	justify-content: center;
+}
+
+.footer {
+	display: grid;
+	grid-template-columns: 1fr;
+	width: 100%;
+	/* That's all for today.. See you later ^_^ */
+}
+
+button#Next {
+	margin: 8px;
+	width: 120px;
+	height: 30px;
+	border: 0px solid black;
+	border-radius: 6px;
+	background: linear-gradient(#ccc,#767676);
+}

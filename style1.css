@@ -185,32 +185,32 @@ ul.areas > li.selected, .areas > li:hover {
 	background-color: #fff;
 }
 
-.icon {
+.areas.icon {
 	width: 34px;
 	height: 34px;
 	background-image: url(icons/sidebar.png);
 	background-repeat: no-repeat;
 }
 
-.icon.home { background-position: 0 -272px; }
-.icon.items { background-position: 0 -306px; }
-.icon.city { background-position: 0 -340px; }
-.icon.job { background-position: 0 -374px; }
-.icon.gym { background-position: 0 -408px; }
-.icon.properties { background-position: 0 -476px; }
-.icon.education { background-position: 0 -510px; }
-.icon.crimes { background-position: 0 -544px; }
-.icon.missions { background-position: 0 -578px; }
-.icon.newspaper { background-position: 0 -612px; }
-.icon.jail { background-position: 0 -646px; }
-.icon.hospital { background-position: 0 -680px; }
-.icon.casino { background-position: 0 -714px; }
-.icon.forums { background-position: 0 -748px; }
-.icon.halloffame { background-position: 0 -782px; }
-.icon.factions { background-position: 0 -816px; }
-.icon.recruitcitizens { background-position: 0 -850px; }
-.icon.rules { background-position: 0 -884px; }
-.icon.elimination { background-position: 0 -918px; }
+.areas.icon.home { background-position: 0 -272px; }
+.areas.icon.items { background-position: 0 -306px; }
+.areas.icon.city { background-position: 0 -340px; }
+.areas.icon.job { background-position: 0 -374px; }
+.areas.icon.gym { background-position: 0 -408px; }
+.areas.icon.properties { background-position: 0 -476px; }
+.areas.icon.education { background-position: 0 -510px; }
+.areas.icon.crimes { background-position: 0 -544px; }
+.areas.icon.missions { background-position: 0 -578px; }
+.areas.icon.newspaper { background-position: 0 -612px; }
+.areas.icon.jail { background-position: 0 -646px; }
+.areas.icon.hospital { background-position: 0 -680px; }
+.areas.icon.casino { background-position: 0 -714px; }
+.areas.icon.forums { background-position: 0 -748px; }
+.areas.icon.halloffame { background-position: 0 -782px; }
+.areas.icon.factions { background-position: 0 -816px; }
+.areas.icon.recruitcitizens { background-position: 0 -850px; }
+.areas.icon.rules { background-position: 0 -884px; }
+.areas.icon.elimination { background-position: 0 -918px; }
 
 div#main {
 	padding: 0 8px;
@@ -322,94 +322,3 @@ div#main > * {
 .item-type.special { background-position-y: calc(-34px * 23); }
 .item-type.misc { background-position-y: calc(-34px * 24); }
 .item-type.books { background-position-y: calc(-34px * 25); }
-
-/* Gym */
-.whitebg {
-	height: 60px;
-	background-color: white;
-}
-
-#Gym {
-	display: grid;
-	grid-auto-flow: column;
-	align-items: center;
-}
-
-#Gym > * {
-	position: relative;
-    top: calc(50% - 46px);
-}
-
-#train-type {
-	display: grid;
-	grid-template-columns: repeat(auto-fit,minmax(194px,1fr));
-	grid-gap: 2px;
-}
-
-#train-type > * {
-	height: 129px;
-}
-
-#train-type > div > div.header {
-	display: grid;
-	grid-auto-flow: column;
-	grid-template-columns: 34px auto-fit 30px;
-}
-
-i.icon {
-	width: 34px;
-	height: 32px;
-	background-image: url(icons/gym/stat_icons.png);
-}
-
-i.icon.strength { background-position-x: -101px; }
-i.icon.defense { background-position-x: -32px; }
-i.icon.speed { background-position-x: -1px; }
-i.icon.dexterity { background-position-x: -67px; }
-
-.aright { text-align-last: center; }
-
-#strength > .content, #defense > .content, #speed > .content, #dexterity > .content {
-	display: grid;
-	align-items: center;
-	justify-content: center;
-}
-
-span.details { text-align: center; padding: 8px 0; }
-
-.inc-button > input {
-	width: 63px;
-	line-height: 30px;
-	border-radius: 8px;
-	border-width: 1px;
-	text-align: center;
-}
-
-.inc-button > button {
-	background-color: transparent;
-	border: solid transparent;
-	position: relative;
-}
-
-.inc-button > button:nth-child(1) { right: -26px; }
-.inc-button > button:nth-child(4) { left: -26px; }
-
-#strength > .content form, #defense > .content form, #speed > .content form, #dexterity > .content form {
-	display: flex;
-	flex-direction: row;
-}
-
-input[value=TRAIN] {
-	background: linear-gradient(180deg,#d7d7d7 0,#bdbdbd 17%,#989898 61%,#7e7e7e 83%,#7c7c7c 87%,#7f7f7f 91%,#868686 96%,#8a8a8a);
-    border: 0;
-    border-radius: 5px;
-    color: #333;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 700;
-    padding: 3px 10px;
-    text-shadow: 0 1px 0 hsla(0,0%,100%,.4);
-    vertical-align: top;
-}
-
-/*That's all for today guys! See you later. Thanks for watching ^_^*/

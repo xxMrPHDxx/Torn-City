@@ -1,0 +1,163 @@
+.whitebg {
+	height: 60px;
+	background-color: white;
+}
+
+#Gym {
+	display: grid;
+	grid-template-columns: 1fr 320px;
+	align-items: center;
+}
+
+#Gym > * {
+	position: relative;
+    top: calc(50% - 46px);
+}
+
+#Gym > img {
+	align-self: end;
+}
+
+.description {
+	margin-left: 16px;
+}
+
+#train-type {
+	display: grid;
+	grid-template-columns: repeat(auto-fit,minmax(194px,1fr));
+	grid-gap: 2px;
+}
+
+#train-type > * {
+	height: 129px;
+}
+
+#train-type > div > div.header {
+	display: grid;
+	grid-auto-flow: column;
+	grid-template-columns: 34px auto-fit 30px;
+}
+
+i.icon {
+	width: 34px;
+	height: 32px;
+	background-image: url(../icons/gym/stat_icons.png);
+}
+
+i.icon.strength { background-position-x: -101px; }
+i.icon.defense { background-position-x: -32px; }
+i.icon.speed { background-position-x: -1px; }
+i.icon.dexterity { background-position-x: -67px; }
+
+.aright { text-align-last: center; }
+
+#strength > .content, #defense > .content, #speed > .content, #dexterity > .content {
+	display: grid;
+	align-items: center;
+	justify-content: center;
+	background-color: #f2f2f2;
+	padding-bottom: 16px;
+}
+
+span.details { text-align: center; padding: 8px 0; }
+
+.inc-button > input {
+	width: 63px;
+	line-height: 30px;
+	border-radius: 8px;
+	border-width: 1px;
+	text-align: center;
+}
+
+.inc-button > button {
+	background-color: transparent;
+	border: solid transparent;
+	position: relative;
+    opacity: 0.3;
+    cursor: pointer;
+}
+
+.inc-button > button:nth-child(1) { right: -26px; }
+.inc-button > button:nth-child(4) { left: -26px; }
+
+#strength > .content form, #defense > .content form, #speed > .content form, #dexterity > .content form {
+	display: flex;
+	flex-direction: row;
+}
+
+input[value=TRAIN] {
+	background: linear-gradient(180deg,#d7d7d7 0,#bdbdbd 17%,#989898 61%,#7e7e7e 83%,#7c7c7c 87%,#7f7f7f 91%,#868686 96%,#8a8a8a);
+    border: 0;
+    border-radius: 5px;
+    color: #333;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 3px 10px;
+    text-shadow: 0 1px 0 hsla(0,0%,100%,.4);
+    vertical-align: top;
+}
+
+.light-gray {
+	opacity: 0.5;
+}
+
+ul#Gyms {
+	display: grid;
+	grid-template-columns: repeat(auto-fit,minmax(47px,1fr));
+	grid-gap: 5px 1px;
+}
+
+li.gyms.icon {
+	background: linear-gradient(180deg,#fff 0,#e4e4e4);
+}
+
+div.gyms.icon {
+	width: 47px;
+	height: 47px;
+	background-image: url(../icons/gym/select_gym.png);
+	background-position-y: 48px;
+}
+
+/* I will move torn_users from mysql schema to torn schema */
+
+div.gyms.selected {
+	background-position-y: 0px;
+}
+
+li.gyms.selected {
+	background: linear-gradient(180deg,#f2ffd9 0,#d4e8c1);
+}
+
+div.gyms.icon.icon1 { background-position-x: calc(48px * 1); }
+div.gyms.icon.icon2 { background-position-x: calc(48px * 2); }
+div.gyms.icon.icon3 { background-position-x: calc(48px * 3); }
+div.gyms.icon.icon4 { background-position-x: calc(48px * 4); }
+div.gyms.icon.icon5 { background-position-x: calc(48px * 5); }
+div.gyms.icon.icon6 { background-position-x: calc(48px * 6); }
+div.gyms.icon.icon7 { background-position-x: calc(48px * 7); }
+div.gyms.icon.icon8 { background-position-x: calc(48px * 8); }
+div.gyms.icon.icon9 { background-position-x: calc(48px * 9); }
+div.gyms.icon.icon10 { background-position-x: calc(48px * 10); }
+div.gyms.icon.icon11 { background-position-x: calc(48px * 11); }
+div.gyms.icon.icon12 { background-position-x: calc(48px * 12); }
+div.gyms.icon.icon13 { background-position-x: calc(48px * 13); }
+div.gyms.icon.icon14 { background-position-x: calc(48px * 14); }
+div.gyms.icon.icon15 { background-position-x: calc(48px * 15); }
+div.gyms.icon.icon16 { background-position-x: calc(48px * 16); }
+div.gyms.icon.icon17 { background-position-x: calc(48px * 17); }
+div.gyms.icon.icon18 { background-position-x: calc(48px * 18); }
+div.gyms.icon.icon19 { background-position-x: calc(48px * 19); }
+div.gyms.icon.icon20 { background-position-x: calc(48px * 20); }
+div.gyms.icon.icon21 { background-position-x: calc(48px * 21); }
+div.gyms.icon.icon22 { background-position-x: calc(48px * 22); }
+div.gyms.icon.icon23 { background-position-x: calc(48px * 23); }
+div.gyms.icon.icon24 { background-position-x: calc(48px * 24); }
+div.gyms.icon.icon25 { background-position-x: calc(48px * 25); }
+div.gyms.icon.icon26 { background-position-x: calc(48px * 26); }
+div.gyms.icon.icon27 { background-position-x: calc(48px * 27); }
+div.gyms.icon.icon28 { background-position-x: calc(48px * 28); }
+div.gyms.icon.icon29 { background-position-x: calc(48px * 29); }
+div.gyms.icon.icon30 { background-position-x: calc(48px * 30); }
+div.gyms.icon.icon31 { background-position-x: calc(48px * 31); }
+div.gyms.icon.icon32 { background-position-x: calc(48px * 32); }

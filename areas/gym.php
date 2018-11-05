@@ -8,11 +8,8 @@
 	// Temporary
 	$row = $result->fetch_assoc();
 	$gym_name = $row['name'];
-
-	$mysql->close();
-	$energy = 0;//$row["energy"];
-	$maxenergy = 100;//$row["maxenergy"];
 ?>
+<link rel="stylesheet" type="text/css" href="styles/gym.css">
 <div class="main header">Gym</div>
 <hr>
 <div class="content-box">
@@ -29,7 +26,9 @@
 		getInfo(<?php echo $SESSION['userid']; ?>).then(info=>{
 			return Promise.all([info.energy,info.maxenergy]);
 		}).then(([energy,maxenergy])=>{
-			document.querySelector("span#gym-energy").innerText = `${energy}/${maxenergy}`;
+			const elem = document.querySelector("span#gym-energy");
+			elem.innerHTML = `You have <span>${energy}/${maxenergy}</span> energy`;
+			elem.querySelector("span").style.color = (energy >= 5) ? "#668c00" : "red";
 		}).then(()=>setTimeout(updateEnergy,1000));
 	}
 	updateEnergy();
@@ -39,13 +38,13 @@
 	<div id="strength">
 		<div class="header subtitle dark"><i class="icon strength"></i>Strength<font class="aright">0.00</font></div> <!-- Fix Later -->
 		<div class="content">
-			<span class="details">Something</span>
+			<span class="details">Damage you make on impact<br><span class="light-gray">5 energy per train</span></span>
 			<form method="POST">
 				<div class="inc-button">
-					<button>&#x25c0;</button>
+					<button type="button">&#x25c0;</button>
 					<input type="hidden" name="type" value="strength">
 					<input type="text" name="value" value="1">
-					<button>&#x25b6;</button>
+					<button type="button">&#x25b6;</button>
 				</div>
 				<input type="submit" name="submit" value="TRAIN">
 			</form>
@@ -54,13 +53,13 @@
 	<div id="defense">
 		<div class="header subtitle dark"><i class="icon defense"></i>Defense<font class="aright">0.00</font></div> <!-- Fix Later -->
 		<div class="content">
-			<span class="details">Something</span>
+			<span class="details">Ability to withstand damage<br><span class="light-gray">5 energy per train</span></span>
 			<form method="POST">
 				<div class="inc-button">
-					<button>&#x25c0;</button>
+					<button type="button">&#x25c0;</button>
 					<input type="hidden" name="type" value="defense">
 					<input type="text" name="value" value="1">
-					<button>&#x25b6;</button>
+					<button type="button">&#x25b6;</button>
 				</div>
 				<input type="submit" name="submit" value="TRAIN">
 			</form>
@@ -69,13 +68,13 @@
 	<div id="speed">
 		<div class="header subtitle dark"><i class="icon speed"></i>Speed<font class="aright">0.00</font></div> <!-- Fix Later -->
 		<div class="content">
-			<span class="details">Something</span>
+			<span class="details">Chance of hitting opponent<br><span class="light-gray">5 energy per train</span></span>
 			<form method="POST">
 				<div class="inc-button">
-					<button>&#x25c0;</button>
+					<button type="button">&#x25c0;</button>
 					<input type="hidden" name="type" value="speed">
 					<input type="text" name="value" value="1">
-					<button>&#x25b6;</button>
+					<button type="button">&#x25b6;</button>
 				</div>
 				<input type="submit" name="submit" value="TRAIN">
 			</form>
@@ -84,13 +83,13 @@
 	<div id="dexterity">
 		<div class="header subtitle dark"><i class="icon dexterity"></i>Dexterity<font class="aright">0.00</font></div> <!-- Fix Later -->
 		<div class="content">
-			<span class="details">Something</span>
+			<span class="details">Ability to evade an attack<br><span class="light-gray">5 energy per train</span></span>
 			<form method="POST">
 				<div class="inc-button">
-					<button>&#x25c0;</button>
+					<button type="button">&#x25c0;</button>
 					<input type="hidden" name="type" value="dexterity">
 					<input type="text" name="value" value="1">
-					<button>&#x25b6;</button>
+					<button type="button">&#x25b6;</button>
 				</div>
 				<input type="submit" name="submit" value="TRAIN">
 			</form>
@@ -100,21 +99,47 @@
 		["strength","defense","speed","dexterity"].forEach(type=>{
 			document.querySelectorAll(`#${type} .inc-button > button`).forEach((arr,i)=>{
 				arr.addEventListener("click",(i === 0) ? 
-				function(arr){return function(e){
-					let elem = document.querySelector(`#${type} .inc-button > input`);
+				function(e){
+					let elem = document.querySelector(`#${type} .inc-button > input[type=text]`);
 					let value = parseInt(elem.value);
 					if(value - 1 >= 1){
 						elem.value = value - 1;
 					}
-				}}(arr):
-				function(arr){return function(e){
-					let elem = document.querySelector(`#${type} .inc-button > input`);
+				}:
+				function(e){
+					let elem = document.querySelector(`#${type} .inc-button > input[type=text]`);
 					let value = parseInt(elem.value);
 					if(value + 1 >= 1){
 						elem.value = value + 1;
 					}
-				}}(arr));
+				});
 			});
 		});
 	</script>
 </div>
+<div id="GymOutput" class="whitebg">
+</div>
+<ul id="Gyms">
+	<?php 
+		$result = $mysql->query("SELECT selected_gym FROM USERS WHERE userid=".$SESSION['userid'].";");
+		$selected_gym = null;
+		if($result)
+			$selected_gym = $result->fetch_assoc()['selected_gym'];
+
+		$result = $mysql->query("SELECT id FROM GYMS;");
+
+		if($result){
+			// while(($row = $result->fetch_assoc()) != null){
+				// $type = $row['id'];
+			for ($i=1;$i<=32;$i++) { 
+				echo '<li class="gyms icon';
+				if($i == $selected_gym) echo ' selected ';
+				echo '"><div class="gyms icon icon'.$i;
+				if($i == $selected_gym) echo ' selected ';
+				echo '"></div></li>';
+			}
+		}
+
+		$mysql->close();
+	?>
+</ul>
