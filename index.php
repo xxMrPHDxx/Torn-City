@@ -1,5 +1,19 @@
 <?php include 'open_session.php'; ?>
 <?php 
+	include 'misc/opendb.php';
+
+	if (isset($_POST['submit']) && $_POST['submit'] == "Login") {
+		if(isset($_POST['username']) && isset($_POST['password'])){
+			$submit = $_POST['submit'];
+			$username = $mysql->real_escape_string($_POST['username']);
+			$password = $mysql->real_escape_string($_POST['password']);
+
+			// Search for the current user
+			$result = $mysql->query("SELECT * FROM USERS WHERE name='$username' OR email='$email';");
+		}
+	}
+
+	// Ignored for now
 	if(isset($_POST['page']) && isset($_POST['title'])){
 		$page = $_POST['page'];
 		$title = $_POST['title'];
@@ -19,6 +33,41 @@
 	}
 ?>
 <!DOCTYPE html>
+<html>
+<head>
+	<title>Torn City</title>
+	<style type="text/css">
+		.wrapper {
+			height: -webkit-fill-available;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		form#Login {
+			width: 260px;
+			display: grid;
+			grid-auto-rows: 1fr;
+			grid-gap: 6px;
+		}
+
+		form#Login > * {
+			line-height: 24px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<form id="Login" action="" method="POST">
+			<input type="text" name="username" placeholder="Username/Email">
+			<input type="password" name="password" placeholder="Password">
+			<input type="submit" name="submit" value="Login">
+		</form>
+	</div>
+</body>
+</html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
 	<title><?php echo $title; ?></title>
@@ -140,4 +189,4 @@
 		updateStatus();
 	</script>
 </body>
-</html>
+</html> -->
