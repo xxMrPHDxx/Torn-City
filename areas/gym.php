@@ -23,7 +23,7 @@
 </div>
 <script type="text/javascript">
 	function updateEnergy(){
-		getInfo(<?php echo $SESSION['userid']; ?>).then(info=>{
+		getInfo(<?php echo $_SESSION['userid']; ?>).then(info=>{
 			return Promise.all([info.energy,info.maxenergy]);
 		}).then(([energy,maxenergy])=>{
 			const elem = document.querySelector("span#gym-energy");
@@ -121,7 +121,7 @@
 </div>
 <ul id="Gyms">
 	<?php 
-		$result = $mysql->query("SELECT selected_gym FROM USERS WHERE userid=".$SESSION['userid'].";");
+		$result = $mysql->query("SELECT selected_gym FROM USERS WHERE userid=".$_SESSION['userid'].";");
 		$selected_gym = null;
 		if($result)
 			$selected_gym = $result->fetch_assoc()['selected_gym'];

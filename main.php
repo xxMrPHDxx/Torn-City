@@ -56,6 +56,7 @@
 					<li><a href="">Forum</a></li>
 					<li><a href="">Staff</a></li>
 					<li><a href="">Credit</a></li>
+					<li><a href="logout.php">Logout</a></li> <!-- Temporary -->
 				</ul>
 			</div>
 			<div id="sidebar">
@@ -136,7 +137,10 @@
 		</div>
 	</div>
 	<script type="text/javascript">
-		updateStatus();
+		<?php 
+			echo "UpdateFactory(".$_SESSION['userid'].")();";
+			echo "setInterval(UpdateFactory(".$_SESSION['userid']."),1000)"; 
+		?>
 	</script>
 </body>
 </html>

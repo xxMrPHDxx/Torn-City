@@ -10,8 +10,8 @@ async function getInfo(id){
 	}catch(e){return Promise.resolve({error:404,message:"Invalid response"});}
 }
 
-function updateStatus(){
-	getInfo(1).then(info=>{
+function updateStatus(userid){
+	getInfo(userid).then(info=>{
 		if(info.status == 404){
 			return;
 		}
@@ -44,4 +44,8 @@ function updateStatus(){
 	})
 }
 
-setInterval(updateStatus,1000); // Every 1 second
+function UpdateFactory(userid){
+	return function(){
+		updateStatus(userid);
+	}
+}
