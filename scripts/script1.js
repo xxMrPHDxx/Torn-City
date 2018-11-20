@@ -49,3 +49,12 @@ function UpdateFactory(userid){
 		updateStatus(userid);
 	}
 }
+
+window.onload = function(e){
+	document.querySelectorAll('script').forEach(script=>script.outerHTML = "");
+}
+
+// That's all for today!
+// Sorry kinda short
+// But I don't feel like coding because it's already late
+// Bye! ^_^

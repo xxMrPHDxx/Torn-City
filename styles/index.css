@@ -1,0 +1,129 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.wrapper {
+	display: grid;
+	min-height: -webkit-fill-available;
+	grid-template-areas: 	"header header header"
+							"poster poster poster"
+							"body body body";
+	grid-template-rows: 70px 176px auto;
+}
+
+.wrapper > #Header, .wrapper > #Poster, .wrapper > #Body {
+	grid-template-columns: 1fr 978px 1fr;
+}
+
+#Header {
+	grid-area: header;
+	background-color: #2e2e2e;
+	display: grid;
+	grid-template-areas: 	". head-content .";
+}
+
+#Poster {
+	grid-area: poster;
+	height: 400px;
+	background-image: url(../images/autumn.png);
+	background-repeat: no-repeat;
+}
+
+#Body {
+	grid-area: body;
+	display: grid;
+	grid-template-areas: 	". body-content .";
+}
+
+#Head-Content {
+	grid-area: head-content;
+	display: inline-flex;
+	align-items: center;
+}
+
+#Body-Content {
+	grid-area: body-content;
+}
+
+div.icon.torn {
+	position: relative;
+	background-image: url(../logos/header.png);
+	background-position: left top;
+    background-repeat: no-repeat;
+	width: 180px;
+	height: 84px;
+}
+
+ul.h-nav {
+	display: inline-grid;
+	list-style: none;
+	color: white;
+	grid-auto-flow: column;
+	grid-gap: 0 14px;
+	padding: 0 14px;
+}
+
+.link-style1 {
+	text-decoration: none;
+	color: white;
+}
+
+div#UserForm > * {
+	margin: 5px 0;
+}
+
+form#Login > * { /*input[type=text]*/
+	border: 0;
+	border-radius: 5px;
+	background-color: black;
+	color: white;
+	padding: 5px;
+}
+
+form#Login > input[type=submit] {
+	border: 1px solid #5d5b5b;
+	background-color: buttonface;
+	background: linear-gradient(#343434, #222222);
+}
+
+.content-box {
+	height: 100%;
+}
+
+.content-box > * {
+	padding: 8px;
+}
+
+.content-box > .subtitle {
+	border-radius: 6px 6px 0 0;
+}
+
+.content-box > .content {
+	background: #f2f2f2;
+	border-radius: 0 0 6px 6px;
+}
+
+.subtitle {
+	display: flex;
+	align-items: center;
+	font-size: 13px;
+	color: white;
+}
+
+.subtitle.dark {
+	background-color: rgb(36, 36, 36);
+}
+.subtitle.light {
+	background-color: #6d6d6d;
+}
+
+hr {
+	margin: 10px 0;
+}
+
+div#Body1 {
+	display: grid;
+	grid-template-columns: repeat(auto-fit,minmax(483px,1fr));
+	grid-column-gap: 10px; 
+}
