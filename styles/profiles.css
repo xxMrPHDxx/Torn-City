@@ -1,0 +1,27 @@
+span.main.title {
+	font-weight: 700;
+	font-size: 22px;
+}
+
+div.two.column.grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(386px, 1fr));
+}
+
+div.two.column.grid > * {
+	margin: 0 5px;
+}
+
+#user-info {
+	display: grid;
+	grid-template-columns: 198px auto;
+}
+
+#user-info > * {
+	margin: 4px;
+}
+
+.user.image {
+	height: 264px;
+	background-color: #c56bbe;
+}

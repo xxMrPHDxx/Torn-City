@@ -7,12 +7,26 @@
 		$result = $mysql->query("SELECT energy,maxenergy,nerve,maxnerve,happy,maxhappy,life,maxlife FROM TORN_USERS WHERE userid='".$userid."';");
 
 		$row = $result->fetch_assoc();
+
+		if(!$row){
+			echo "{".
+				"\"status\": 900,".
+				"\"message\": \"Username not found!\"".
+			"}";
+			exit();
+		}
+
 		$len = sizeof($row);
 		$i = 0;
 
 		echo "{\n";
 		foreach ($row as $prop => $value) {
-			echo "\t\"$prop\" : \"$value\"";
+			if(is_numeric($value)){
+				echo "\t\"$prop\" : $value";
+			}else{
+				echo "\t\"$prop\" : \"$value\"";
+			}
+
 			if($i != $len - 1){
 				echo ",";
 			}
@@ -22,7 +36,7 @@
 		echo "}";
 	} else {
 		echo "{".
-			"\"status\": 404,".
+			"\"status\": 901,".
 			"\"message\": \"Invalid response\"".
 		"}";
 	}

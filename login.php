@@ -36,7 +36,13 @@
 
 					echo "Success!";
 					header("Location: index.php");
+				}else{
+					$_SESSION['error'] = "Password Incorrect!";
+					header("Location: index.php");
 				}
+			}else{
+				$_SESSION['error'] = "Username/Email Not Found!";
+				header("Location: index.php");
 			}
 		}
 	}
