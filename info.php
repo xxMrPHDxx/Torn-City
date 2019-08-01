@@ -1,10 +1,10 @@
 <?php 
 	header("Content-Type: application/json");
-	if(isset($_POST['userid'])){
-		$mysql = mysqli_connect("localhost","root","minecraft12345","mysql");
+	if(isset($_POST['id'])){
+		$mysql = mysqli_connect("localhost","root","minecraft12345","torn");
 
-		$userid = $mysql->real_escape_string($_POST['userid']);
-		$result = $mysql->query("SELECT energy,maxenergy,nerve,maxnerve,happy,maxhappy,life,maxlife FROM TORN_USERS WHERE userid='".$userid."';");
+		$userid = $mysql->real_escape_string($_POST['id']);
+		$result = $mysql->query("SELECT energy,maxenergy,nerve,maxnerve,happy,maxhappy,life,maxlife FROM USERS WHERE id='".$userid."';");
 
 		$row = $result->fetch_assoc();
 

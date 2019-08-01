@@ -1,7 +1,7 @@
 async function getInfo(id){
 	const form = new FormData();
 	if(typeof id === "string" || typeof id === "number")
-		form.append("userid",id)
+		form.append("id",id)
 	try{
 		return fetch("info.php",{
 			method: "post",

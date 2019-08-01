@@ -80,28 +80,28 @@
 					</ul>
 					<hr>
 					<div id="stats-area">
-						<div>Energy: <span id="energy">25</span>/<span id="maxenergy">100</span><span id="timer-energy" class="time float right">02:15</span>
+						<div>Energy: <span id="energy">0</span>/<span id="maxenergy">0</span><span id="timer-energy" class="time float right">00:00</span>
 							<div class="progressbar back">
 								<div class="progressbar middle"></div>
-								<div id="bar-energy" style="width: 25%;" class="progressbar front"></div>
+								<div id="bar-energy" style="width: 0%;" class="progressbar front"></div>
 							</div>
 						</div>
-						<div>Nerve: <span id="nerve">25</span>/<span id="maxnerve">100</span><span id="timer-nerve" class="time float right">02:15</span>
+						<div>Nerve: <span id="nerve">0</span>/<span id="maxnerve">0</span><span id="timer-nerve" class="time float right">00:00</span>
 							<div class="progressbar back">
 								<div class="progressbar middle"></div>
-								<div id="bar-nerve" style="width: 50%;" class="progressbar front"></div>
+								<div id="bar-nerve" style="width: 0%;" class="progressbar front"></div>
 							</div>
 						</div>
-						<div>Happy: <span id="happy">25</span>/<span id="maxhappy">100</span><span id="timer-happy" class="time float right">02:15</span>
+						<div>Happy: <span id="happy">0</span>/<span id="maxhappy">0</span><span id="timer-happy" class="time float right">00:00</span>
 							<div class="progressbar back">
 								<div class="progressbar middle"></div>
-								<div id="bar-happy" style="width: 75%;" class="progressbar front"></div>
+								<div id="bar-happy" style="width: 0%;" class="progressbar front"></div>
 							</div>
 						</div>
-						<div>Life: <span id="life">25</span>/<span id="maxlife">100</span><span id="timer-life" class="time float right">FULL</span>
+						<div>Life: <span id="life">0</span>/<span id="maxlife">0</span><span id="timer-life" class="time float right">00:00</span>
 							<div class="progressbar back">
 								<div class="progressbar middle"></div>
-								<div id="bar-life" style="width: 100%;" class="progressbar front"></div>
+								<div id="bar-life" style="width: 0%;" class="progressbar front"></div>
 							</div>
 						</div>
 					</div>

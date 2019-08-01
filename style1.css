@@ -322,3 +322,25 @@ div#main > * {
 .item-type.special { background-position-y: calc(-34px * 23); }
 .item-type.misc { background-position-y: calc(-34px * 24); }
 .item-type.books { background-position-y: calc(-34px * 25); }
+
+.item-list {
+	display: grid;
+	grid-template-columns: 60px auto;
+	grid-template-rows: 30px;
+	align-items: center;
+	background-color: #f2f2f2;
+}
+
+.item-list > * {
+	display: flex;
+	align-items: center;
+	height: 100%;
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+.item-list > *:not(img) {
+	padding-left: 12px;
+}
+
+/*.item-list > img {}*/
