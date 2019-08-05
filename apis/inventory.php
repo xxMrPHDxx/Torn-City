@@ -11,7 +11,6 @@
 		$result = $mysql->query($sql);
 
 		$error = true;
-		$type_id = "all";
 		if($result){
 			$type_id = $result->fetch_assoc()['id'];
 		}
@@ -24,7 +23,7 @@
 			while(($row = $result->fetch_assoc()) != null){
 				$name = $row['name'];
 				$id = $row['type_id'];
-				if($type_id == "all" || $id == $type_id){
+				if($type == "all" || $id == $type_id){
 					$items .= '"'.$name.'", ';
 				}
 			}
@@ -33,7 +32,7 @@
 		}
 
 		// This is the failed state
-		if($error) $json .= '"result": "error", "message": "nothing found!"';
+		if($error) $json .= '"result": "error", "items": [], "message": "nothing found!"';
 
 		// $result = $mysql->query($sql);
 		// if($result){
@@ -45,6 +44,6 @@
 
 		echo $json."}";
 	}else{
-		echo `{ "result": "error", "message": "not clue what just happened!" }`;
+		echo `{ "result": "error", "items": [], message": "not clue what just happened!" }`;
 	}
 ?>

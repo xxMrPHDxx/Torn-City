@@ -15,7 +15,7 @@
 				// User found! Check the password
 				$hashedpwd = hash('sha256',$password);
 				if($row['password'] == $hashedpwd){
-					$_SESSION['userid'] = $row['userid'];
+					$_SESSION['userid'] = $row['id'];
 					$_SESSION['name'] = $row['name'];
 					$_SESSION['money'] = $row['money'];
 					$_SESSION['level'] = $row['level'];

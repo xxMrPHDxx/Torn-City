@@ -95,6 +95,51 @@ INSERT INTO ITEM_TYPE (name, type) VALUES (
 ),(
 	"Viruses",
 	"viruses"
+),(
+	"Temporary",
+	"temporary"
+),(
+	"Clothing",
+	"clothing"
+),(
+	"Drugs",
+	"drugs"
+),(
+	"Energy Drink",
+	"energy-drink"
+),(
+	"Alcohol",
+	"alcohol"
+),(
+	"Boosters",
+	"boosters"
+),(
+	"Enhancer",
+	"enhancer"
+),(
+	"Supply Packs",
+	"supply-packs"
+),(
+	"Flowers",
+	"flowers"
+),(
+	"Cars",
+	"cars"
+),(
+	"Artifacts",
+	"artifacts"
+),(
+	"Books",
+	"books"
+),(
+	"Special",
+	"special"
+),(
+	"Collectibles",
+	"collectibles"
+),(
+	"Misc",
+	"misc"
 );
 
 -- WHILE ITEMS TABLE IN TORN SCHEMA, YOU MUST CHANGE THEM RESPECTIVELY IN EVERY LAST mysqli_connect() ARGUMENT TO THE SPECIFIC SCHEMA

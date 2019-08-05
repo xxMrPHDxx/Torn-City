@@ -15,13 +15,26 @@
 <div class="content-box">
 	<div class="subtitle dark">Your Items - All</div>
 	<ul id="Inventory" class="items type">
+		<li class="item-type all" type="all"></li>
 		<?php
+			$userid = $_SESSION['userid'];
 			$sql = "SELECT * FROM ITEM_TYPE;"; // id, name, type
 			$result = $mysql->query($sql);
 			if($result){
 				while(($row = $result->fetch_assoc()) != null){
 					$type = strtolower($row['type']);
-					echo "<a class=\"item-type $type\" type=\"$type\"></a>";
+					$sql = 'SELECT COUNT(*) AS count FROM INVENTORY WHERE user_id='.$userid.' AND item_id IN '.
+						'(SELECT id FROM ITEMS WHERE type_id=(SELECT id FROM ITEM_TYPE WHERE name="'.$type.'"));';
+					// die("DB = ".$sql);
+					$result2 = $mysql->query($sql);
+					if(!$result2) continue;
+					$count = $result2->fetch_assoc()['count'];
+					if($count == 0){
+						echo "<a class=\"item-type off $type\" type=\"$type\"></a>";
+					}else{
+						// User have at least 1 item of type $type
+						echo "<a class=\"item-type $type\" type=\"$type\"></a>";
+					}
 				}
 			}
 		?>
@@ -35,6 +48,8 @@
 			<li class="item-type candy"></li>
 			<li class="item-type electrical"></li>
 			<li class="item-type jewelry"></li>
+			<li class="item-type plushies"></li>
+			<li class="item-type viruses"></li>
 			<li class="item-type off temporary"></li>
 			<li class="item-type off clothing"></li>
 			<li class="item-type off drugs"></li>
@@ -44,9 +59,7 @@
 			<li class="item-type off enhancer"></li>
 			<li class="item-type off supply-packs"></li>
 			<li class="item-type off flowers"></li>
-			<li class="item-type off plushies"></li>
 			<li class="item-type off cars"></li>
-			<li class="item-type off viruses"></li>
 			<li class="item-type off artifacts"></li>
 			<li class="item-type off books"></li>
 			<li class="item-type off special"></li>
@@ -54,8 +67,9 @@
 			<li class="item-type off misc"></li>
 		-->
 	</ul>
-	<div class="content">
+	<div id="Inventory" class="content">
 		<script type="text/javascript">
+			const inventoryDiv = document.querySelector("div#Inventory");
 			document.querySelectorAll(".item-type")
 			.forEach(elem => {
 				elem.onclick = () => {
@@ -72,11 +86,20 @@
 						}
 					)
 					.then(res => res.json())
-					.then(console.log);
+					.then(({result, items}) => {
+						console.log(type, result, items)
+						if(result == 'success'){
+							inventoryDiv.innerHTML = "";
+							for(let item of items){
+								const img_path = './images/items/katana.png';
+								inventoryDiv.innerHTML += `<li class='item-list'><img src='${img_path}'></img><div>${item}</div></li>`;
+							}
+						}
+					});
 				}
 			});
 		</script>
-		<?php
+		<!-- <?php
 			// echo $_GET;
 
 			$sql = "SELECT * FROM ITEMS";
@@ -92,7 +115,7 @@
 					echo "<li class='item-list'><img src='./images/items/katana.png'></img><div>$name</div></li>";
 				}
 			}
-		?>
+		?> -->
 	</div>
 </div>
 
