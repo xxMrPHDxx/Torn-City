@@ -1,7 +1,7 @@
 <?php 
 	header("Content-Type: application/json");
 	if(isset($_POST['id'])){
-		$mysql = mysqli_connect("localhost","root","minecraft12345","torn");
+		include_once 'misc/opendb.php';
 
 		$userid = $mysql->real_escape_string($_POST['id']);
 		$result = $mysql->query("SELECT energy,maxenergy,nerve,maxnerve,happy,maxhappy,life,maxlife FROM USERS WHERE id='".$userid."';");

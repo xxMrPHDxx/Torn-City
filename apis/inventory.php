@@ -1,7 +1,8 @@
 <?php
 	header("Content-Type: application/json");
 	if(isset($_POST['userid']) && isset($_POST['type'])){
-		$mysql = mysqli_connect("localhost","root","minecraft12345","torn");
+		include_once '../misc/opendb.php';
+
 		$userid = $mysql->real_escape_string($_POST['userid']);
 		$type = $mysql->real_escape_string($_POST['type']);
 		
